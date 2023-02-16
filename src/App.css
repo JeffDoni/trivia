@@ -1,0 +1,27 @@
+.correctColor {
+  border: 3px solid rgb(6, 240, 15);
+}
+
+.incorrectColor {
+  border: 3px solid red;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+
+}
+
+body {
+  align-items: center;
+  background-color: #040208;
+  background-image: url('./images/background.png');
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: flex;
+  height: 100vh;
+  justify-content: center;
+  width: 100vw;
+}
+
