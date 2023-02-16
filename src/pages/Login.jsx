@@ -73,7 +73,7 @@ class Login extends Component {
             >
               <AiFillSetting />
               {'  '}
-              Configurações
+              Settings
             </button>
           </form>
         </div>
