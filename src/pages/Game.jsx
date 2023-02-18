@@ -62,7 +62,7 @@ class Game extends Component {
   };
 
   handleColor = () => {
-    this.setState({ isColorCorrect: true, isBtnNext: true });
+    this.setState({ isColorCorrect: true, isBtnNext: true, isDisabled: true });
   };
 
   handleDispatch = () => {
@@ -76,6 +76,7 @@ class Game extends Component {
     this.setState((oldState) => ({ isColorCorrect: false,
       seconds: 30,
       isDisabled: false,
+      isBtnNext: false,
       countQuestions: oldState.countQuestions + 1 }
     ));
     this.timerFunction();
@@ -93,6 +94,7 @@ class Game extends Component {
       } else {
         this.setState({
           isDisabled: true,
+          isBtnNext:true,
         });
         clearInterval(this.myInterval);
         dispatch(actionScore(0));
