@@ -6,6 +6,7 @@ import
   ADD_DATA_USER,
   ACTION_SCORE,
   ACTION_ASSERTIONS,
+  CONFIG,
 }
   from './actionTypes';
 
@@ -71,5 +72,10 @@ export const actionScore = (payload) => ({
 // ACTION ASSERTIONS
 export const actionAssertions = (payload) => ({
   type: ACTION_ASSERTIONS,
+  payload,
+});
+
+export const config = (payload) => ({
+  type: CONFIG,
   payload,
 });

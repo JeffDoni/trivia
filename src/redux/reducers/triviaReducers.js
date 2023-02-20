@@ -2,6 +2,7 @@ import {
   REQUEST_STARTED,
   REQUEST_SUCESS_API,
   NEXT_QUESTION,
+  CONFIG,
 }
   from '../actions/actionTypes';
 
@@ -9,6 +10,9 @@ const INITIAL_STATE_TRIVIA = {
   response: [],
   nextQuestion: 0,
   allQuestions: [],
+  id: '',
+  difficulty: '',
+  type: '',
 };
 const triviaReducers = (state = INITIAL_STATE_TRIVIA, action) => {
   switch (action.type) {
@@ -38,6 +42,13 @@ const triviaReducers = (state = INITIAL_STATE_TRIVIA, action) => {
       nextQuestion: state.nextQuestion + 1 >= state.response.length ? 0
         : state.nextQuestion,
     };
+    case CONFIG: 
+    return {
+      ...state,
+      response: state.response.filter((e) => e.type === action.payload.type),
+      ...action.payload,
+    }
+    
   default:
     return state;
   }

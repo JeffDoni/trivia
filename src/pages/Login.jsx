@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import { AiFillSetting } from 'react-icons/ai';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import fetchToken from '../service/service';
@@ -33,7 +32,6 @@ class Login extends Component {
   render() {
     const { name, email } = this.state;
     const { handleChange, handleClick } = this;
-    const { history } = this.props;
 
     return (
       <div className="container-login">
@@ -64,16 +62,6 @@ class Login extends Component {
               className="button-login"
             >
               Play
-            </button>
-            <button
-              type="button"
-              data-testid="btn-settings"
-              onClick={ () => history.push('/config') }
-              className="button-config"
-            >
-              <AiFillSetting />
-              {'  '}
-              Settings
             </button>
           </form>
         </div>
